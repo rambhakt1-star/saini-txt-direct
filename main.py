@@ -343,6 +343,60 @@ async def youtube_to_txt(client, message: Message):
     # Remove the temporary text file after sending
     os.remove(txt_file)
 
+@bot.on_message(filters.command("upgrade"))
+
+async def upgrade_plan(client, message):
+
+    text = (
+
+        "💎 **Upgrade to Premium** 💎\n\n"
+
+        "🚀 **Exclusive Premium Pro Features**\n\n"
+
+        "🪙 **10-Day Plan**\n"
+
+        "💰 Rs 200 🇮🇳\n\n"
+
+        "🪙 **20-Day Plan**\n"
+
+        "💰 Rs 400 🇮🇳\n\n"
+
+        "🪙 **Monthly Plan**\n"
+
+        "💰 Rs 500 🇮🇳\n\n"
+
+        "📌 **Payment Methods**:\n"
+
+        "- Send Phone Pay Gift Card: [Click Here](https://t.me/Contact_AdminS2bot)\n"
+
+        "- For International payment, Contact Admin\n\n"
+
+        "📤 **After Payment**:\n"
+
+        "1️⃣ Send a payment screenshot below 👇\n"
+
+        "2️⃣ Contact: Admin to complete your purchase 🤝\n\n"
+
+        "💌 We're here for you! 💕"
+
+    )
+
+    buttons = InlineKeyboardMarkup(
+
+        [
+
+            [InlineKeyboardButton("🧾 Send Redeem code ", url="https://t.me/Contact_AdminS2bot")],
+
+            [InlineKeyboardButton("💬 Contact Now", url="https://t.me/Contact_AdminS2bot")],
+
+        ]
+
+    )
+
+    await message.reply_text(text, reply_markup=buttons, disable_web_page_preview=True) 
+
+
+
 @bot.on_message(filters.command(["ytm"]))
 async def txt_handler(bot: Client, m: Message):
     global processing_request, cancel_requested, cancel_message
